@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name=" viewport" content="width=device-width, initial-scale=1.0">
+        <title>Premier test </title>
+    <script src="https://unpkg.com/vue@next"></script> 
+    </head>
+    <body>
+        <div id="app">
+            Nombre 1 :<input type='text' v-model ="a" />
+            <br>
+            Nombre 2 :<input type='text' v-model ="b"/>
+            <br>
+            <a href="#" @click ='produit'> calculer le produit </a>
+            <br>
+            Resultat :<input type='text' v-model ="c"/>
+        </div>
+        <script>
+            const vm = Vue.createApp({
+                data(){
+                    return {
+                        a:0,
+                        b:0,
+                        c:0,
+                    }
+                   
+                },
+                 methods: {
+                    produit () {
+                        this.c = this.a * this.b;
+                    }
+                }
+            }) .mount('#app')
+        </script>
+    </body>
+</html>
